@@ -3,7 +3,7 @@ import { rem } from 'polished';
 
 const Header = ({ isDark }) => {
   return (
-    <HeaderStyled isDark={isDark}>
+    <HeaderStyled>
       <div className='container'>
         <div className='logo'>
           <img

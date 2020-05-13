@@ -1,20 +1,28 @@
 import styled from '@emotion/styled';
 import { rem } from 'polished';
+import { Flex, Box } from 'reflexbox';
+import Navigation from './Navigation';
+import Link from 'next/link';
 
-const Header = ({ isDark }) => {
+const Header = ({ isDark, navigation }) => {
   return (
-    <HeaderStyled>
-      <div className='container'>
-        <div className='logo'>
-          <img
-            src='/images/logo.svg'
-            alt='Sites logo'
-            width='50'
-            height='auto'
-          />
-          <span className='logo-text'>Next Movies</span>
-        </div>
-      </div>
+    <HeaderStyled isDark={isDark}>
+      <Box variant='container'>
+        <Flex alignItems='center' justifyContent='space-between'>
+          <Link href='/'>
+            <a className='logo'>
+              <img
+                src='/images/logo.svg'
+                alt='Sites logo'
+                width='50'
+                height='auto'
+              />
+              <span className='logo-text'>Next Movies</span>
+            </a>
+          </Link>
+          <Navigation navigation={navigation} />
+        </Flex>
+      </Box>
     </HeaderStyled>
   );
 };
@@ -27,8 +35,13 @@ const HeaderStyled = styled.header`
     display: flex;
     align-items: center;
 
+    &:hover {
+      opacity: 0.7;
+      transition: opacity 0.3s ease;
+    }
+
     .logo-text {
-      color: #333333;
+      color: ${(props) => (props.isDark ? '#ffffff' : '#333333')};
       font-weight: bold;
       font-size: ${rem(20)};
       margin-left: 20px;

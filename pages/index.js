@@ -14,7 +14,7 @@ const Home = ({ movies }) => {
       >
         {movies.map((movie) => (
           <Box key={movie.id} width={{ _: '100%', md: '30%' }}>
-            <Card movie={movie} />
+            <Card movie={movie}/>
           </Box>
         ))}
       </Flex>

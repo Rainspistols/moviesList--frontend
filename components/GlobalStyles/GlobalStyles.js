@@ -13,12 +13,7 @@ const GlobalStyles = () => (
         min-height: 100%;
         font-family: Helvetica, Arial, sans-serif;
       }
-      .container {
-        max-width: 960px;
-        width: 100%;
-        margin: 0 auto;
-        padding: 30px;
-      }
+
       img {
         max-width: 100%;
       }

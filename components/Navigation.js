@@ -4,7 +4,6 @@ import { useRouter } from 'next/router';
 
 const Navigation = ({ navigation }) => {
   const router = useRouter();
-  console.log(navigation);
 
   return (
     <NavigationStyled>

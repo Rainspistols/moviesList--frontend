@@ -11,11 +11,12 @@ const Home = ({ movies }) => {
       <Flex
         justifyContent='space-between'
         flexDirection={{ _: 'column', md: 'row' }}
+        flexWrap='wrap'
         mb={100}
       >
         {movies.map((movie) => (
           <Box key={movie.id} width={{ _: '100%', md: '30%' }}>
-            <Card movie={movie}/>
+            <Card movie={movie} />
           </Box>
         ))}
       </Flex>
